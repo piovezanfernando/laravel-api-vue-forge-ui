@@ -99,8 +99,7 @@ export default defineComponent({
 
     // Dynamic component loading based on props.component
     const dynamicComponent = computed(() => {
-      console.log(props.component);
-      return defineAsyncComponent(() => import(`./${props.component}.vue`)); // Adjust path if needed
+      return defineAsyncComponent(() => import(/* @vite-ignore */  `./${props.component}.vue`));
     });
 
     const showConfirmMessage = ref(false);
